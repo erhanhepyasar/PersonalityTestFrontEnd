@@ -13,22 +13,22 @@ class App extends Component {
   } 
 
   componentDidMount() {
-    var urlApp = 'http://localhost:8085/api/question'
+    var urlApp = 'http://localhost:3000/api/question'    
+    
     fetch(urlApp)
-          .then(res => res.json())
+          .then(res => res.json())          
           .then(json => {
                 this.setState({
                   isLoaded: true,
                   items: json,
                 })
-          });
+          });          
   }
 
   render() {
     var { isLoaded, items } = this.state;
+        
 
-   
-    
     if(!isLoaded) {
       return <div>Loading...</div>
     }
